@@ -37,6 +37,20 @@
         color: rgba(54, 56, 56, 0.9033);
         line-height: 22px;
     }
+    &__list-link--active {
+        padding-bottom: 4px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2px;
+            border-radius: 1px;
+            background-color:rgba(#363838, .7);
+        }
+    }
 }
 
 .footer {
@@ -225,6 +239,28 @@
     }
     &__img {
         width: 483px;
+    }
+}
+
+.breadcrumbs {
+    // position: absolute;
+    width: 100%;
+    background-color:rgba(#DFDFDF, .5);
+    padding: 12px 14px;
+    &__list {
+        display: flex;
+    }
+    &__item::after {
+        content: '/';
+        margin-left: -4px;
+        margin-right: 4px;
+    }
+    &__item:last-child::after {
+        display: none;
+    }
+    &__link {
+        font-size: 14px;
+        color: $defult;
     }
 }
 
@@ -548,5 +584,56 @@
         @extend %title-font;
         font-size: 24px;
         line-height: 38px;
+    }
+}
+
+.about {
+    &__prev {
+        background: url(../images/about-bg.jpg) center center/cover no-repeat;
+        padding: 160px 0;
+        margin-top: -51px;
+    }
+    &__prev-title {
+        text-align: center;
+        color: $title;
+        @extend %title-font;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 80px;
+    }
+    &__content {
+        padding: 130px 0 40px;
+    }
+    &__title {
+        color: $title;
+        @extend %title-font;
+        font-size: 36px;
+        line-height: 60px;
+        width: 822px;
+        padding-bottom: 20px;
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 2px;
+            background: #6D7278;
+        }
+    }
+    &__text {
+        margin-top: 23px;
+        padding-left: 285px;
+        p {
+            margin-bottom: 30px;
+        }
+    }
+    &__popup {
+        background: url(../images/popup-bg.jpg) center center/cover no-repeat;
+        height: 414px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }
